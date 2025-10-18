@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nhóm của Chúng Mình</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="team-styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- ============ Header Section ============ -->
+      <header>
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>Nhóm của Chúng Mình</h1>
+            <p class="subtitle">Giới thiệu thành viên, kỹ năng & liên hệ</p>
+          </div>
+        </div>
+
+        <div class="tools">
+          <div class="search" role="search">
+            <input
+              type="search"
+              id="q"
+              placeholder="Tìm theo tên, kỹ năng…"
+              oninput="filterCards(this.value)"
+              aria-label="Tìm kiếm thành viên"
+            />
+            <button
+              onclick="document.getElementById('q').value=''; filterCards('')"
+            >
+              Xóa
+            </button>
+          </div>
+          <button
+            class="chip active"
+            data-filter="all"
+            onclick="setFilter('all', this)"
+          >
+            Tất cả
+          </button>
+
+          <button
+            class="chip"
+            data-filter="design"
+            onclick="setFilter('design', this)"
+          >
+            Design
+          </button>
+          <button
+            class="chip"
+            data-filter="frontend"
+            onclick="setFilter('frontend', this)"
+          >
+            Front end
+          </button>
+          <button
+            class="chip"
+            data-filter="dev"
+            onclick="setFilter('dev', this)"
+          >
+            Dev
+          </button>
+          <button class="chip" data-filter="pm" onclick="setFilter('pm', this)">
+            PM
+          </button>
+          <button
+            class="chip"
+            data-filter="content"
+            onclick="setFilter('content', this)"
+          >
+            content
+          </button>
+          <button
+            class="chip"
+            data-filter="marketing"
+            onclick="setFilter('marketing', this)"
+          >
+            Marketing
+          </button>
+        </div>
+      </header>
+
+      <!-- ============ Section Divider ============ -->
+      <div class="section">
+        <hr />
+        <span>Thành viên</span>
+        <hr />
+      </div>
+
+      <!-- ============ Members Grid ============ -->
+      <main class="grid" id="grid">
+        <!-- ====== Member Card 1: Minh Huy ====== -->
+        <article class="card" data-tags="pm html css nodejs frontend">
+          <div class="profile">
+            <div class="avatar" aria-hidden="true">
+              <div class="avatar-inner">
+                <img
+                  src="/huyHunter/assets/img/profile/anh huy.jpeg"
+                  alt="Ảnh Minh Huy"
+                />
+              </div>
+            </div>
+            <div class="hello">Hello, I'm</div>
+            <h2 class="name">Minh Huy</h2>
+            <a href="/huyHunter/minhhuy.html" class="view-details-btn">
+              <i class="fa-solid fa-eye"></i>
+              Xem chi tiết
+            </a>
+            <p class="bio">
+              Tôi là PM của nhóm, chuyên quản lý dự án, phân chia công việc và
+              điều phối hoạt động giữa các thành viên để đảm bảo tiến độ.
+            </p>
+
+            <div class="socials" aria-label="Liên hệ Minh Huy">
+              <button class="icon-btn">
+                <i class="fa-brands fa-facebook"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-instagram"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-tiktok"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-github"></i>
+              </button>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Html & Css</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">PM</span>
+              <span class="tag">Front end</span>
+            </div>
+          </div>
+        </article>
+        <!-- ====== Member Card 2: Minh Mẫn ====== -->
+        <article class="card" data-tags="frontend content sql cpp python dev">
+          <div class="profile">
+            <div class="avatar" aria-hidden="true">
+              <div class="avatar-inner">
+                <img
+                  src="/MinhMan/MinhMan/assets/img/misc/misc-16.webp"
+                  alt="Ảnh Minh Mẫn"
+                />
+              </div>
+            </div>
+            <div class="hello">Hello, I'm</div>
+            <h2 class="name">Minh Mẫn</h2>
+            <a href="/MinhMan/MinhMan/minhMan.html" class="view-details-btn">
+              <i class="fa-solid fa-eye"></i>
+              Xem chi tiết
+            </a>
+            <p class="bio">
+              Tôi chuyên về Frontend development, thiết kế giao diện người dùng
+              và sáng tạo nội dung đa phương tiện cho các dự án của nhóm.
+            </p>
+
+            <div class="socials" aria-label="Liên hệ Minh Mẫn">
+              <button class="icon-btn">
+                <i class="fa-brands fa-facebook"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-instagram"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-tiktok"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-github"></i>
+              </button>
+            </div>
+
+            <div class="tags">
+              <span class="tag">SQL</span>
+              <span class="tag">Front end</span>
+              <span class="tag">C++</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== Member Card 3: Bảo Trâm ====== -->
+        <article class="card" data-tags="frontend content design ui">
+          <div class="profile">
+            <div class="avatar" aria-hidden="true">
+              <div class="avatar-inner">
+                <img src="/baoTram/assets/img/3.jpg" alt="Ảnh Bảo Trâm" />
+              </div>
+            </div>
+            <div class="hello">Hello, I'm</div>
+            <h2 class="name">Bảo Trâm</h2>
+            <a href="/baoTram/baoTram.html" class="view-details-btn">
+              <i class="fa-solid fa-eye"></i>
+              Xem chi tiết
+            </a>
+            <p class="bio">
+              Tôi chuyên về Frontend development, thiết kế UI/UX cho trải nghiệm
+              người dùng và tạo nội dung sáng tạo cho các sản phẩm của nhóm.
+            </p>
+
+            <div class="socials" aria-label="Liên hệ Bảo Trâm">
+              <button class="icon-btn">
+                <i class="fa-brands fa-facebook"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-instagram"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-tiktok"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-github"></i>
+              </button>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Ui</span>
+              <span class="tag">Design</span>
+              <span class="tag">Content</span>
+            </div>
+          </div>
+        </article>
+        <!-- ====== Member Card 4: Chí Dũng ====== -->
+        <article class="card" data-tags="dev python mobile content">
+          <div class="profile">
+            <div class="avatar" aria-hidden="true">
+              <div class="avatar-inner">
+                <img
+                  src="/chiDung/static/images/avatar.jpg"
+                  alt="Ảnh Chí Dũng"
+                />
+              </div>
+            </div>
+            <div class="hello">Hello, I'm</div>
+            <h2 class="name">Chí Dũng</h2>
+            <a href="/chiDung/chiDung.html" class="view-details-btn">
+              <i class="fa-solid fa-eye"></i>
+              Xem chi tiết
+            </a>
+            <p class="bio">
+              Tôi là Developer chính của nhóm, thành thạo nhiều ngôn ngữ lập
+              trình, xử lý các vấn đề kỹ thuật phức tạp và phát triển ứng dụng
+              mobile.
+            </p>
+
+            <div class="socials" aria-label="Liên hệ Chí Dũng">
+              <button class="icon-btn">
+                <i class="fa-brands fa-facebook"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-instagram"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-tiktok"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-github"></i>
+              </button>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Dev</span>
+              <span class="tag">content</span>
+              <span class="tag">python</span>
+              <span class="tag">Mobile</span>
+            </div>
+          </div>
+        </article>
+        <!-- ====== Member Card 5: Minh Nhật ====== -->
+        <article class="card" data-tags="content marketing csharp cpp frontend">
+          <div class="profile">
+            <div class="avatar" aria-hidden="true">
+              <div class="avatar-inner">
+                <img src="/minhNhat/images/profile.png" alt="Ảnh Minh Nhật" />
+              </div>
+            </div>
+            <div class="hello">Hello, I'm</div>
+            <h2 class="name">Minh Nhật</h2>
+            <a href="/minhNhat/minhNhat.html" class="view-details-btn">
+              <i class="fa-solid fa-eye"></i>
+              Xem chi tiết
+            </a>
+            <p class="bio">
+              Tôi chuyên về Content creation, Digital Marketing, Frontend
+              development hỗ trợ các thành viên khác trong các dự án của nhóm.
+            </p>
+
+            <div class="socials" aria-label="Liên hệ Minh Nhật">
+              <button class="icon-btn">
+                <i class="fa-brands fa-facebook"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-instagram"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-tiktok"></i>
+              </button>
+              <button class="icon-btn">
+                <i class="fa-brands fa-github"></i>
+              </button>
+            </div>
+
+            <div class="tags">
+              <span class="tag">C#</span>
+              <span class="tag">C++</span>
+              <span class="tag">Marketing</span>
+              <span class="tag">content</span>
+            </div>
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- ============ JavaScript ============ -->
+    <script>
+      // Filter by category (chip buttons)
+      function setFilter(tag, el) {
+        // Remove active class from all chips
+        document
+          .querySelectorAll(".chip")
+          .forEach((c) => c.classList.remove("active"));
+
+        // Add active class to clicked chip
+        el.classList.add("active");
+
+        // Filter cards
+        const cards = [...document.querySelectorAll(".card")];
+        cards.forEach((card) => {
+          const has = tag === "all" ? true : card.dataset.tags.includes(tag);
+          card.style.display = has ? "" : "none";
+        });
+      }
+
+      // Search by text
+      function filterCards(q) {
+        const v = q.trim().toLowerCase();
+        const cards = [...document.querySelectorAll(".card")];
+
+        cards.forEach((card) => {
+          const text = card.innerText.toLowerCase();
+          card.style.display = text.includes(v) ? "" : "none";
+        });
+      }
+    </script>
+  </body>
+</html>

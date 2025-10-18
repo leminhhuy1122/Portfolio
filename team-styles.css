@@ -1,0 +1,372 @@
+/* ============ CSS Variables ============ */
+:root {
+  --bg: #0b1020;
+  --card: #171c33;
+  --muted: #9aa4bb;
+  --accent: #7aa8ff;
+  --accent-2: #6ee7ff;
+  --text: #e7ebf6;
+  --ring: rgba(110, 231, 255, 0.35);
+}
+
+/* ============ Base Styles ============ */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    "Helvetica Neue", Arial;
+  color: var(--text);
+  background: linear-gradient(
+    135deg,
+    #0b1426 0%,
+    #1a1f3a 20%,
+    #0f1829 60%,
+    #0d1524 100%
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-height: 100vh;
+  line-height: 1.6;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      ellipse 80% 50% at 20% -20%,
+      rgba(110, 231, 255, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 60% 80% at 80% 120%,
+      rgba(122, 168, 255, 0.03) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============ Layout ============ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============ Header ============ */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #58ffd0, #6ee7ff 60%, #7aa8ff);
+  box-shadow: 0 6px 24px rgba(110, 231, 255, 0.35);
+}
+
+h1 {
+  font-size: clamp(22px, 4vw, 36px);
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+/* ============ Search & Filters ============ */
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search {
+  flex: 1 1 260px;
+  display: flex;
+}
+
+.search input {
+  flex: 1;
+  border: none;
+  border-radius: 12px 0 0 12px;
+  padding: 12px 14px;
+  background: #0e1631;
+  color: var(--text);
+  outline: none;
+}
+
+.search button {
+  border: none;
+  border-radius: 0 12px 12px 0;
+  padding: 12px 14px;
+  background: #1a254d;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.chip {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #0e1631;
+  color: var(--muted);
+  border: 1px solid #1e2a57;
+  cursor: pointer;
+}
+
+.chip.active {
+  color: #0b1020;
+  background: var(--accent-2);
+  border-color: transparent;
+}
+
+/* ============ Grid Layout ============ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* ============ Member Card ============ */
+.card {
+  grid-column: span 12;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 50%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.4), 0 16px 32px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(110, 231, 255, 0.2);
+  border-color: rgba(110, 231, 255, 0.3);
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ============ Avatar with Gradient Ring ============ */
+.avatar {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  margin-top: 6px;
+}
+
+.avatar::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    var(--accent-2),
+    var(--accent),
+    #8b7bff,
+    var(--accent-2)
+  );
+  filter: blur(0.5px);
+}
+
+.avatar-inner {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: inherit;
+  overflow: hidden;
+  background: #0e1631;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(110, 231, 255, 0.18);
+}
+
+.avatar-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============ Profile Info ============ */
+.hello {
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.name {
+  margin: 6px 0 0;
+  font-weight: 800;
+  font-size: clamp(22px, 4.2vw, 36px);
+  letter-spacing: 0.2px;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.bio {
+  margin: 12px auto 0;
+  max-width: 46ch;
+  color: #cdd5ea;
+  font-size: 15px;
+}
+
+/* ============ Social Links ============ */
+.socials {
+  display: flex;
+  gap: 14px;
+  margin: 22px 0 4px;
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #f3f1f1;
+  border: 1px solid #253065;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.icon-btn:hover {
+  transform: translateY(-1px);
+}
+
+.icon-btn:focus {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: #cfd6ee;
+}
+
+/* ============ View Details Button ============ */
+.view-details-btn {
+  margin-top: 18px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(122, 168, 255, 0.25);
+}
+
+.view-details-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(122, 168, 255, 0.4);
+  background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 100%);
+}
+
+.view-details-btn:active {
+  transform: translateY(0);
+}
+
+/* ============ Tags ============ */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  justify-content: center;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #0e1631;
+  border: 1px solid #1e2a57;
+  color: #cdd5ea;
+}
+
+/* ============ Section Divider ============ */
+.section {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+}
+
+.section hr {
+  flex: 1;
+  border: none;
+  height: 1px;
+  background: #1e2a57;
+}
+
+/* ============ Responsive Design ============ */
+@media (min-width: 640px) {
+  .card {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    grid-column: span 4;
+  }
+}
