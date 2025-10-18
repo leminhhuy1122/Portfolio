@@ -16,14 +16,53 @@
 
     <!-- Header -->
     <header class="header">
-      <nav class="nav-menu">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="#hero" class="nav-link">Trang Chủ</a>
-        <a href="#about" class="nav-link">Giới Thiệu</a>
-        <a href="#skills" class="nav-link">Kỹ Năng</a>
-        <a href="#experience" class="nav-link">Kinh Nghiệm</a>
-        <a href="#contact" class="nav-link">Liên Hệ</a>
-      </nav>
+      <div class="nav-container">
+        <nav class="nav-menu">
+          <a href="../index.html" class="nav-link nav-highlight">
+            <span class="link-bg"></span>
+            <span class="link-content">
+              <i class="fas fa-home"></i>
+              <span>Home</span>
+            </span>
+          </a>
+          <a href="#hero" class="nav-link">
+            <span class="link-bg"></span>
+            <span class="link-content">
+              <i class="fas fa-rocket"></i>
+              <span>Trang Chủ</span>
+            </span>
+          </a>
+          <a href="#about" class="nav-link">
+            <span class="link-bg"></span>
+            <span class="link-content">
+              <i class="fas fa-user"></i>
+              <span>Giới Thiệu</span>
+            </span>
+          </a>
+          <a href="#skills" class="nav-link">
+            <span class="link-bg"></span>
+            <span class="link-content">
+              <i class="fas fa-code"></i>
+              <span>Kỹ Năng</span>
+            </span>
+          </a>
+          <a href="#experience" class="nav-link">
+            <span class="link-bg"></span>
+            <span class="link-content">
+              <i class="fas fa-briefcase"></i>
+              <span>Kinh Nghiệm</span>
+            </span>
+          </a>
+          <a href="#contact" class="nav-link">
+            <span class="link-bg"></span>
+            <span class="link-content">
+              <i class="fas fa-paper-plane"></i>
+              <span>Liên Hệ</span>
+            </span>
+          </a>
+        </nav>
+        <div class="nav-indicator"></div>
+      </div>
     </header>
 
     <!-- Hero Section -->
@@ -630,6 +669,11 @@
               </div>
             </div>
           </div>
+
+          <!-- Timeline End Arrow -->
+          <div class="timeline-end-arrow">
+            <i class="fas fa-chevron-down"></i>
+          </div>
         </div>
       </div>
     </section>
@@ -707,6 +751,11 @@
             <div class="student-card-flip" id="studentCardFlip">
               <!-- Front Side -->
               <div class="card-side card-front">
+                <!-- UTH Logo -->
+                <div class="card-uth-logo">
+                  <img src="assets/img/logo_uth.png" alt="UTH Logo" />
+                </div>
+
                 <div class="card-header">
                   <div class="card-logo">
                     <i class="fas fa-university"></i>
@@ -724,9 +773,6 @@
                       alt="Lê Minh Huy"
                       class="photo-img"
                     />
-                  </div>
-                  <div class="photo-badge">
-                    <i class="fas fa-check-circle"></i>
                   </div>
                 </div>
 
@@ -1171,6 +1217,56 @@
         </div>
       </div>
     </footer>
+
+    <!-- Custom Notification Modal -->
+    <div id="customNotification" class="custom-notification-overlay">
+      <div class="custom-notification-modal">
+        <div class="notification-icon-wrapper">
+          <div class="notification-icon">
+            <i class="fas fa-check"></i>
+          </div>
+        </div>
+        <h3 class="notification-title">Email đã được gửi thành công!</h3>
+        <p class="notification-message">
+          Cảm ơn bạn đã liên hệ! Tôi sẽ phản hồi sớm nhất có thể.
+        </p>
+        <div class="notification-details">
+          <div class="detail-item">
+            <i class="fas fa-user"></i>
+            <div class="detail-content">
+              <span class="detail-label">Họ tên:</span>
+              <span class="detail-value" id="notif-name">Huy Hunter</span>
+            </div>
+          </div>
+          <div class="detail-item">
+            <i class="fas fa-envelope"></i>
+            <div class="detail-content">
+              <span class="detail-label">Email:</span>
+              <span class="detail-value" id="notif-email">huy@gmail.com</span>
+            </div>
+          </div>
+          <div
+            class="detail-item"
+            id="notif-phone-wrapper"
+            style="display: none"
+          >
+            <i class="fas fa-phone"></i>
+            <div class="detail-content">
+              <span class="detail-label">Số ĐT:</span>
+              <span class="detail-value" id="notif-phone">0123456789</span>
+            </div>
+          </div>
+          <div class="detail-item">
+            <i class="fas fa-tag"></i>
+            <div class="detail-content">
+              <span class="detail-label">Chủ đề:</span>
+              <span class="detail-value" id="notif-subject">NEW</span>
+            </div>
+          </div>
+        </div>
+        <button class="notification-btn" id="closeNotification">OK</button>
+      </div>
+    </div>
 
     <script src="assets/js/index.js"></script>
   </body>

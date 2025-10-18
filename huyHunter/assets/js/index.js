@@ -1,3 +1,78 @@
+// Custom Notification System
+function showNotification(data) {
+  const overlay = document.getElementById("customNotification");
+  const icon = overlay.querySelector(".notification-icon");
+  const iconElement = icon.querySelector("i");
+  const title = overlay.querySelector(".notification-title");
+  const message = overlay.querySelector(".notification-message");
+
+  // Update content based on type
+  if (data.type === "success") {
+    icon.classList.remove("error");
+    iconElement.className = "fas fa-check";
+    title.textContent = data.title || "Email đã được gửi thành công!";
+    message.textContent =
+      data.message || "Cảm ơn bạn đã liên hệ! Tôi sẽ phản hồi sớm nhất có thể.";
+
+    // Update details
+    if (data.details) {
+      document.getElementById("notif-name").textContent =
+        data.details.name || "";
+      document.getElementById("notif-email").textContent =
+        data.details.email || "";
+      document.getElementById("notif-subject").textContent =
+        data.details.subject || "";
+
+      const phoneWrapper = document.getElementById("notif-phone-wrapper");
+      if (data.details.phone) {
+        document.getElementById("notif-phone").textContent = data.details.phone;
+        phoneWrapper.style.display = "flex";
+      } else {
+        phoneWrapper.style.display = "none";
+      }
+    }
+  } else if (data.type === "error") {
+    icon.classList.add("error");
+    iconElement.className = "fas fa-times";
+    title.textContent = data.title || "Có lỗi xảy ra!";
+    message.textContent = data.message || "Vui lòng thử lại sau.";
+
+    // Hide details for error
+    overlay.querySelector(".notification-details").style.display = "none";
+  }
+
+  // Show overlay
+  overlay.classList.add("show");
+}
+
+function hideNotification() {
+  const overlay = document.getElementById("customNotification");
+  overlay.classList.remove("show");
+
+  // Reset details display
+  setTimeout(() => {
+    overlay.querySelector(".notification-details").style.display = "block";
+  }, 300);
+}
+
+// Close notification button
+document.addEventListener("DOMContentLoaded", function () {
+  const closeBtn = document.getElementById("closeNotification");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", hideNotification);
+  }
+
+  // Close on overlay click
+  const overlay = document.getElementById("customNotification");
+  if (overlay) {
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) {
+        hideNotification();
+      }
+    });
+  }
+});
+
 // Typing Effect Animation
 const typingText = document.getElementById("typingText");
 if (typingText) {
@@ -391,7 +466,7 @@ if (contactForm) {
       };
 
       // Show loading state
-      const submitBtn = contactForm.querySelector(".btn-submit");
+      const submitBtn = contactForm.querySelector(".btn-submit-modern");
       const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML =
         '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
@@ -428,20 +503,18 @@ if (contactForm) {
             submitBtn.style.opacity = "1";
 
             setTimeout(() => {
-              alert(
-                "✅ Email đã được gửi thành công!\n\n" +
-                  "Cảm ơn bạn đã liên hệ! Tôi sẽ phản hồi sớm nhất có thể.\n\n" +
-                  "Thông tin đã gửi:\n" +
-                  "👤 Họ tên: " +
-                  formData.name +
-                  "\n" +
-                  "📧 Email: " +
-                  formData.email +
-                  "\n" +
-                  (formData.phone ? "📱 Số ĐT: " + formData.phone + "\n" : "") +
-                  "📝 Chủ đề: " +
-                  formData.subject
-              );
+              showNotification({
+                type: "success",
+                title: "Email đã được gửi thành công!",
+                message:
+                  "Cảm ơn bạn đã liên hệ! Tôi sẽ phản hồi sớm nhất có thể.",
+                details: {
+                  name: formData.name,
+                  email: formData.email,
+                  phone: formData.phone,
+                  subject: formData.subject,
+                },
+              });
 
               // Reset form
               contactForm.reset();
@@ -465,14 +538,12 @@ if (contactForm) {
             "linear-gradient(120deg, #ff6b6b 0%, #ff8e8e 100%)";
           submitBtn.style.opacity = "1";
 
-          alert(
-            "❌ Có lỗi xảy ra khi gửi email!\n\n" +
-              "Vui lòng thử lại sau hoặc liên hệ trực tiếp qua:\n" +
-              "📧 Email: leminhhuy1122@gmail.com\n" +
-              "📱 Số điện thoại: 0987653801\n\n" +
-              "Chi tiết lỗi: " +
-              error.message
-          );
+          showNotification({
+            type: "error",
+            title: "Có lỗi xảy ra khi gửi email!",
+            message:
+              "Vui lòng thử lại sau hoặc liên hệ trực tiếp qua:\n📧 leminhhuy1122@gmail.com | 📱 0987653801",
+          });
 
           // Reset button after 2 seconds
           setTimeout(() => {
@@ -493,9 +564,11 @@ if (contactForm) {
         });
       }
 
-      alert(
-        "Vui lòng kiểm tra lại thông tin và điền đầy đủ các trường bắt buộc!"
-      );
+      showNotification({
+        type: "error",
+        title: "Thông tin chưa đầy đủ!",
+        message: "Vui lòng kiểm tra lại và điền đầy đủ các trường bắt buộc.",
+      });
     }
   });
 }
