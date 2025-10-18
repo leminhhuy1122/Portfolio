@@ -21,6 +21,7 @@
         <a href="#hero" class="nav-link">Trang Chủ</a>
         <a href="#about" class="nav-link">Giới Thiệu</a>
         <a href="#skills" class="nav-link">Kỹ Năng</a>
+        <a href="#experience" class="nav-link">Kinh Nghiệm</a>
         <a href="#contact" class="nav-link">Liên Hệ</a>
       </nav>
     </header>
@@ -37,10 +38,14 @@
               <span class="word-animate" style="--delay: 0.4s">tôi</span>
               <span class="word-animate" style="--delay: 0.6s">là</span>
               <br />
-              <span class="highlight" data-text="Lê Minh Huy">Lê Minh Huy</span>
+              <span class="highlight name-wrapper">
+                <span class="name-text">Lê Minh Huy</span>
+                <span class="name-shimmer"></span>
+              </span>
             </h1>
             <p class="hero-subtitle">
-              Creative <span class="text-accent">Web Developer</span>
+              Creative
+              <span class="text-accent typing-text" id="typingText"></span>
             </p>
 
             <p class="hero-description">
@@ -129,58 +134,138 @@
     <!-- About Section -->
     <section id="about" class="about-section section">
       <div class="container">
-        <div class="section-title fade-in">
-          <h2>Giới Thiệu</h2>
-          <p>Tìm hiểu thêm về hành trình và kinh nghiệm của tôi</p>
+        <div class="section-title-enhanced fade-in">
+          <div class="title-decoration">
+            <span class="title-line"></span>
+            <i class="fas fa-user-circle title-icon"></i>
+            <span class="title-line"></span>
+          </div>
+          <h2 class="main-title">Giới Thiệu</h2>
+          <div class="title-glow"></div>
         </div>
 
-        <div class="about-grid fade-in">
-          <div class="profile-card">
-            <img
-              src="assets/img/profile/anh huy.jpeg"
-              alt="Lê Minh Huy"
-              class="profile-img"
-            />
+        <div class="about-grid-new fade-in">
+          <!-- Left: Profile Card -->
+          <div class="profile-card-about">
+            <div class="profile-image-wrapper">
+              <img
+                src="assets/img/profile/anh huy.jpeg"
+                alt="Lê Minh Huy"
+                class="profile-img"
+              />
+              <div class="profile-badge">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <h3 class="profile-name-about">Lê Minh Huy</h3>
+            <p class="profile-role">Web Developer</p>
+
+            <!-- Quick Stats -->
+            <div class="quick-stats">
+              <div class="stat-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>UTH</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Nha Trang</span>
+              </div>
+            </div>
           </div>
-          <div class="about-content">
-            <h3 class="about-title">Sinh viên Công Nghệ Thông Tin</h3>
-            <p>
-              Tôi đam mê lập trình và công nghệ, luôn tìm tòi học hỏi những kiến
-              thức mới trong lĩnh vực CNTT.
-            </p>
 
-            <ul class="info-list">
-              <li class="info-item">
-                <span class="info-label">Họ Tên :</span>
-                <span>Lê Minh Huy</span>
-              </li>
-              <li class="info-item">
-                <span class="info-label">Sinh nhật:</span>
-                <span>12/06/2005</span>
-              </li>
-              <li class="info-item">
-                <span class="info-label">Tuổi:</span>
-                <span>20</span>
-              </li>
-              <li class="info-item">
-                <span class="info-label">Điện thoại:</span>
-                <span>0987653801</span>
-              </li>
-              <li class="info-item">
-                <span class="info-label">Email:</span>
-                <span>leminhhuy1122@gmail.com</span>
-              </li>
-              <li class="info-item">
-                <span class="info-label">Địa chỉ:</span>
-                <span>Nha Trang, Khánh Hòa</span>
-              </li>
-            </ul>
+          <!-- Right: Content -->
+          <div class="about-content-new">
+            <div class="about-header">
+              <h3 class="about-title-gradient">
+                Sinh viên Công Nghệ Thông Tin
+              </h3>
+              <p class="about-description">
+                Tôi đam mê lập trình và công nghệ, luôn tìm tòi học hỏi những
+                kiến thức mới trong lĩnh vực CNTT.
+              </p>
+            </div>
 
-            <p>
-              Hiện tại tôi thành thạo các ngôn ngữ lập trình như HTML, CSS,
-              JavaScript, C++, Python, C#, Node.js. Luôn học hỏi và áp dụng công
-              nghệ mới vào các dự án cá nhân.
-            </p>
+            <!-- Info Cards Grid -->
+            <div class="info-cards-grid">
+              <div class="info-card">
+                <div class="info-icon">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="info-details">
+                  <span class="info-label">Họ Tên</span>
+                  <span class="info-value">Lê Minh Huy</span>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">
+                  <i class="fas fa-calendar"></i>
+                </div>
+                <div class="info-details">
+                  <span class="info-label">Sinh nhật</span>
+                  <span class="info-value">12/06/2005</span>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="info-details">
+                  <span class="info-label">Điện thoại</span>
+                  <span class="info-value">0987653801</span>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-details">
+                  <span class="info-label">Email</span>
+                  <span class="info-value">leminhhuy1122@gmail.com</span>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-details">
+                  <span class="info-label">Địa chỉ</span>
+                  <span class="info-value">Nha Trang, Khánh Hòa</span>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div class="info-details">
+                  <span class="info-label">Trường</span>
+                  <span class="info-value">ĐH Giao Thông Vận Tải</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="tech-stack-section">
+              <h4 class="tech-title">
+                <i class="fas fa-code"></i> Ngôn ngữ lập trình
+              </h4>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">Node.js</span>
+              </div>
+              <p class="tech-description">
+                Luôn học hỏi và áp dụng công nghệ mới vào các dự án cá nhân.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -189,76 +274,361 @@
     <!-- Skills Section -->
     <section id="skills" class="skills-section section">
       <div class="container">
-        <div class="section-title fade-in">
-          <h2>Kỹ Năng</h2>
-          <p>Các công nghệ tôi sử dụng để tạo ra sản phẩm chất lượng</p>
+        <!-- Super Prominent Title -->
+        <div class="skills-title-wrapper fade-in">
+          <div class="skills-title-decoration">
+            <div class="code-symbol">&lt;</div>
+            <h2 class="skills-main-title">
+              <span class="title-letter">K</span>
+              <span class="title-letter">Ỹ</span>
+              <span class="title-space"></span>
+              <span class="title-letter">N</span>
+              <span class="title-letter">Ă</span>
+              <span class="title-letter">N</span>
+              <span class="title-letter">G</span>
+            </h2>
+            <div class="code-symbol">/&gt;</div>
+          </div>
+          <p class="skills-subtitle">
+            <span class="bracket">[</span>
+            <span class="tech-text">Front-End Development Stack</span>
+            <span class="bracket">]</span>
+          </p>
+          <div class="title-wave"></div>
         </div>
 
-        <div class="skills-grid fade-in">
-          <div class="skill-card">
-            <div class="skill-name">HTML/CSS</div>
-            <div class="skill-bar">
-              <div
-                class="skill-progress"
-                style="width: 90%; background: var(--primary-gradient)"
-              ></div>
+        <!-- Skills Hexagon Grid Layout -->
+        <div class="skills-hexagon-container fade-in">
+          <!-- Center Main Skill -->
+          <div class="hex-skill hex-center" data-skill="main">
+            <div class="hex-inner">
+              <div class="hex-content">
+                <div class="hex-icon">
+                  <i class="fab fa-html5"></i>
+                </div>
+                <h3>HTML/CSS</h3>
+                <div class="hex-percentage">90%</div>
+                <div class="hex-level">Expert</div>
+              </div>
             </div>
-            <div class="skill-percentage">90%</div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-name">JavaScript</div>
-            <div class="skill-bar">
-              <div
-                class="skill-progress"
-                style="width: 85%; background: var(--secondary-gradient)"
-              ></div>
+          <!-- Surrounding Skills in Circle -->
+          <div class="hex-skill hex-orbit hex-orbit-1" data-skill="javascript">
+            <div class="hex-inner">
+              <div class="hex-content">
+                <div class="hex-icon">
+                  <i class="fab fa-js"></i>
+                </div>
+                <h4>JavaScript</h4>
+                <div class="hex-percentage">85%</div>
+              </div>
             </div>
-            <div class="skill-percentage">85%</div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-name">C++</div>
-            <div class="skill-bar">
-              <div
-                class="skill-progress"
-                style="width: 88%; background: var(--tertiary-gradient)"
-              ></div>
+          <div class="hex-skill hex-orbit hex-orbit-2" data-skill="cpp">
+            <div class="hex-inner">
+              <div class="hex-content">
+                <div class="hex-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h4>C++</h4>
+                <div class="hex-percentage">88%</div>
+              </div>
             </div>
-            <div class="skill-percentage">88%</div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-name">Python</div>
-            <div class="skill-bar">
-              <div
-                class="skill-progress"
-                style="width: 82%; background: var(--purple-gradient)"
-              ></div>
+          <div class="hex-skill hex-orbit hex-orbit-3" data-skill="python">
+            <div class="hex-inner">
+              <div class="hex-content">
+                <div class="hex-icon">
+                  <i class="fab fa-python"></i>
+                </div>
+                <h4>Python</h4>
+                <div class="hex-percentage">82%</div>
+              </div>
             </div>
-            <div class="skill-percentage">82%</div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-name">Node.js</div>
-            <div class="skill-bar">
-              <div
-                class="skill-progress"
-                style="width: 80%; background: var(--orange-gradient)"
-              ></div>
+          <div class="hex-skill hex-orbit hex-orbit-4" data-skill="nodejs">
+            <div class="hex-inner">
+              <div class="hex-content">
+                <div class="hex-icon">
+                  <i class="fab fa-node"></i>
+                </div>
+                <h4>Node.js</h4>
+                <div class="hex-percentage">80%</div>
+              </div>
             </div>
-            <div class="skill-percentage">80%</div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-name">C#</div>
-            <div class="skill-bar">
-              <div
-                class="skill-progress"
-                style="width: 75%; background: var(--green-gradient)"
-              ></div>
+          <div class="hex-skill hex-orbit hex-orbit-5" data-skill="csharp">
+            <div class="hex-inner">
+              <div class="hex-content">
+                <div class="hex-icon">
+                  <i class="fas fa-hashtag"></i>
+                </div>
+                <h4>C#</h4>
+                <div class="hex-percentage">75%</div>
+              </div>
             </div>
-            <div class="skill-percentage">75%</div>
+          </div>
+
+          <!-- Connection Lines -->
+          <svg class="connection-lines" viewBox="0 0 800 600">
+            <line class="connect-line" x1="400" y1="300" x2="400" y2="150" />
+            <line class="connect-line" x1="400" y1="300" x2="550" y2="225" />
+            <line class="connect-line" x1="400" y1="300" x2="550" y2="375" />
+            <line class="connect-line" x1="400" y1="300" x2="400" y2="450" />
+            <line class="connect-line" x1="400" y1="300" x2="250" y2="375" />
+            <line class="connect-line" x1="400" y1="300" x2="250" y2="225" />
+          </svg>
+        </div>
+
+        <!-- Skills Stats Bar -->
+        <div class="skills-stats-bar fade-in">
+          <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+            <div class="stat-info">
+              <div class="stat-value" data-count="10">5</div>
+              <div class="stat-label">Dự án hoàn thành</div>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-info">
+              <div class="stat-value" data-count="100">100+</div>
+              <div class="stat-label">Khách hàng hài lòng</div>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-code"></i></div>
+            <div class="stat-info">
+              <div class="stat-value" data-count="20000">20,000+</div>
+              <div class="stat-label">Dòng code viết</div>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+            <div class="stat-info">
+              <div class="stat-value" data-count="3">3</div>
+              <div class="stat-label">Năm kinh nghiệm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section section">
+      <div class="container">
+        <!-- Title -->
+        <div class="experience-title-wrapper fade-in">
+          <h2 class="experience-main-title">
+            <span class="title-icon">💼</span>
+            <span class="title-text">KINH NGHIỆM</span>
+            <span class="title-icon">🚀</span>
+          </h2>
+          <p class="experience-subtitle">
+            Hành trình phát triển qua từng dự án
+          </p>
+        </div>
+
+        <!-- Timeline Road -->
+        <div class="timeline-road fade-in">
+          <!-- Project 1 - Right -->
+          <div class="milestone milestone-right">
+            <div class="milestone-connector">
+              <div class="connector-line"></div>
+              <div class="connector-dot"></div>
+            </div>
+            <div class="milestone-card">
+              <div class="card-header">
+                <div class="project-number">01</div>
+                <div class="project-date">
+                  <i class="far fa-calendar"></i>
+                  <span>06/2024 - 08/2024</span>
+                </div>
+              </div>
+              <div class="project-icon-circle">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <h3 class="project-name">Chúc mừng năm mới</h3>
+              <div class="project-role">
+                <i class="fas fa-code"></i>
+                Frontend Developer
+              </div>
+              <p class="project-desc">
+                Website chúc mừng năm mới với hiệu ứng pháo hoa động, đếm ngược
+                thời gian và giao diện tương tác. Tích hợp âm thanh nền tạo
+                không khí lễ hội.
+              </p>
+              <div class="tech-pills">
+                <span class="pill html">HTML5</span>
+                <span class="pill css">CSS3</span>
+                <span class="pill js">JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 - Left -->
+          <div class="milestone milestone-left">
+            <div class="milestone-connector">
+              <div class="connector-line"></div>
+              <div class="connector-dot"></div>
+            </div>
+            <div class="milestone-card">
+              <div class="card-header">
+                <div class="project-number">02</div>
+                <div class="project-date">
+                  <i class="far fa-calendar"></i>
+                  <span>03/2024 - 05/2024</span>
+                </div>
+              </div>
+              <div class="project-icon-circle">
+                <i class="fas fa-birthday-cake"></i>
+              </div>
+              <h3 class="project-name">Chúc mừng sinh nhật</h3>
+              <div class="project-role">
+                <i class="fas fa-laptop-code"></i>
+                Web Developer
+              </div>
+              <p class="project-desc">
+                Trang web chúc mừng sinh nhật với hiệu ứng 3D độc đáo và âm
+                nhạc. Tính năng tùy chỉnh tên và lời chúc cá nhân hóa.
+                Responsive tối ưu.
+              </p>
+              <div class="tech-pills">
+                <span class="pill effect">3D Effects</span>
+                <span class="pill audio">Audio API</span>
+                <span class="pill responsive">Responsive</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 - Right Music -->
+          <div class="milestone milestone-right">
+            <div class="milestone-connector">
+              <div class="connector-line"></div>
+              <div class="connector-dot"></div>
+            </div>
+            <div class="milestone-card">
+              <div class="card-header">
+                <div class="project-number">03</div>
+                <div class="project-date">
+                  <i class="far fa-calendar"></i>
+                  <span>06/2023 - 08/2023</span>
+                </div>
+              </div>
+              <div class="project-icon-circle">
+                <i class="fas fa-music"></i>
+              </div>
+              <h3 class="project-name">Nghe nhạc trực tuyến</h3>
+              <div class="project-role">
+                <i class="fas fa-headphones"></i>
+                Frontend Developer
+              </div>
+              <p class="project-desc">
+                Ứng dụng nghe nhạc trực tuyến với giao diện hiện đại và tính
+                năng playlist tùy chỉnh. Tích hợp API âm nhạc, điều khiển phát
+                nhạc và hiển thị lời bài hát đồng bộ.
+              </p>
+              <div class="tech-pills">
+                <span class="pill html">HTML5</span>
+                <span class="pill css">CSS3</span>
+                <span class="pill js">JavaScript</span>
+                <span class="pill api">Music API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 - Left Featured -->
+          <div class="milestone milestone-left featured">
+            <div class="milestone-connector">
+              <div class="connector-line"></div>
+              <div class="connector-dot featured-dot"></div>
+            </div>
+            <div class="milestone-card featured-card">
+              <div class="featured-badge">
+                <i class="fas fa-star"></i>
+                Nổi bật
+              </div>
+              <div class="card-header">
+                <div class="project-number">04</div>
+                <div class="project-date">
+                  <i class="far fa-calendar"></i>
+                  <span>09/2023 - 02/2024</span>
+                </div>
+              </div>
+              <div class="project-icon-circle large">
+                <i class="fas fa-fish"></i>
+              </div>
+              <h3 class="project-name">Quản lý bán cá Koi</h3>
+              <div class="project-role">
+                <i class="fas fa-layer-group"></i>
+                Full Stack Developer
+              </div>
+              <p class="project-desc">
+                Hệ thống quản lý toàn diện với đầy đủ chức năng CRUD. Thiết kế
+                database tối ưu và API RESTful với Node.js và MongoDB. Giao diện
+                quản lý sản phẩm, đơn hàng và khách hàng chuyên nghiệp.
+              </p>
+              <div class="tech-pills">
+                <span class="pill node">Node.js</span>
+                <span class="pill mongo">MongoDB</span>
+                <span class="pill api">REST API</span>
+                <span class="pill react">React</span>
+              </div>
+              <div class="project-stats">
+                <div class="stat-item">
+                  <div class="stat-value">100%</div>
+                  <div class="stat-label">Hoàn thành</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">6</div>
+                  <div class="stat-label">Tháng</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 - Right Current -->
+          <div class="milestone milestone-right current">
+            <div class="milestone-connector">
+              <div class="connector-line"></div>
+              <div class="connector-dot current-dot"></div>
+            </div>
+            <div class="milestone-card">
+              <div class="current-badge">
+                <span class="pulse-dot"></span>
+                Đang thực hiện
+              </div>
+              <div class="card-header">
+                <div class="project-number">05</div>
+                <div class="project-date">
+                  <i class="far fa-calendar"></i>
+                  <span>01/2024 - Hiện tại</span>
+                </div>
+              </div>
+              <div class="project-icon-circle">
+                <i class="fas fa-user"></i>
+              </div>
+              <h3 class="project-name">Portfolio cá nhân</h3>
+              <div class="project-role">
+                <i class="fas fa-paint-brush"></i>
+                Web Designer & Developer
+              </div>
+              <p class="project-desc">
+                Thiết kế và phát triển portfolio cá nhân với giao diện hiện đại.
+                Áp dụng các kỹ thuật animation và responsive design. Tối ưu SEO
+                và hiệu suất.
+              </p>
+              <div class="tech-pills">
+                <span class="pill ui">UI/UX</span>
+                <span class="pill animation">Animation</span>
+                <span class="pill seo">SEO</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -266,13 +636,199 @@
 
     <!-- Profile Card Section -->
     <section class="profile-card-section section">
+      <!-- Background Decorations -->
+      <div class="bg-grid-lines"></div>
+      <div class="bg-spotlight"></div>
+      <div class="bg-light-beam bg-light-1"></div>
+      <div class="bg-light-beam bg-light-2"></div>
+      <div class="bg-light-beam bg-light-3"></div>
+
       <div class="container">
-        <div class="profile-cta">
-          <h2>Muốn biết thêm về tôi?</h2>
-          <p>Xem thông tin chi tiết và kinh nghiệm của tôi</p>
-          <button id="showProfileBtn" class="btn btn-primary">
-            Xem thông tin
-          </button>
+        <!-- Call to Action -->
+        <div class="student-card-cta fade-in">
+          <div class="cta-content">
+            <div class="cta-icon">
+              <i class="fas fa-id-card"></i>
+            </div>
+            <h2 class="cta-title">Muốn biết thêm về tôi?</h2>
+            <p class="cta-description">
+              Xem thẻ sinh viên của tôi để khám phá thông tin chi tiết
+            </p>
+            <button id="showStudentCard" class="btn-show-card">
+              <i class="fas fa-info-circle"></i>
+              Xem chi tiết
+            </button>
+          </div>
+
+          <!-- Decorative Elements -->
+          <div class="floating-elements">
+            <div class="float-icon" style="top: 20%; left: 15%">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="float-icon" style="top: 60%; right: 20%">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="float-icon" style="bottom: 25%; left: 25%">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="float-icon" style="top: 40%; left: 5%">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="float-icon" style="top: 15%; right: 10%">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="float-icon" style="bottom: 15%; right: 15%">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="float-icon" style="top: 70%; left: 40%">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div class="float-icon" style="top: 25%; right: 35%">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="float-icon" style="bottom: 40%; right: 5%">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="float-icon" style="top: 50%; left: 50%">
+              <i class="fas fa-certificate"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Card Modal -->
+        <div id="studentCardModal" class="student-card-modal">
+          <div class="modal-backdrop"></div>
+          <div class="modal-card-container">
+            <button class="close-card-btn" id="closeStudentCard">
+              <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Flip Card -->
+            <div class="student-card-flip" id="studentCardFlip">
+              <!-- Front Side -->
+              <div class="card-side card-front">
+                <div class="card-header">
+                  <div class="card-logo">
+                    <i class="fas fa-university"></i>
+                  </div>
+                  <div class="card-school">
+                    <h3>ĐẠI HỌC GIAO THÔNG VẬN TẢI</h3>
+                    <p>Công nghệ Thông tin</p>
+                  </div>
+                </div>
+
+                <div class="card-photo">
+                  <div class="photo-frame">
+                    <img
+                      src="assets/img/profile/anh huy.jpeg"
+                      alt="Lê Minh Huy"
+                      class="photo-img"
+                    />
+                  </div>
+                  <div class="photo-badge">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                </div>
+
+                <div class="card-info">
+                  <h2 class="student-name">LÊ MINH HUY</h2>
+                  <div class="info-grid">
+                    <div class="info-item">
+                      <span class="info-label">Mã SV:</span>
+                      <span class="info-value">056205008344</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-label">Lớp:</span>
+                      <span class="info-value">CN2303CLCB</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-label">Khóa:</span>
+                      <span class="info-value">2023 - 2027</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-label">Chuyên ngành:</span>
+                      <span class="info-value">CNTT</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-footer">
+                  <div class="flip-hint">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Click để lật sang mặt sau</span>
+                  </div>
+                </div>
+
+                <div class="card-pattern"></div>
+              </div>
+
+              <!-- Back Side -->
+              <div class="card-side card-back">
+                <div class="back-header">
+                  <h3>
+                    <i class="fas fa-user-circle"></i>
+                    THÔNG TIN CÁ NHÂN
+                  </h3>
+                </div>
+
+                <div class="back-content">
+                  <!-- Programming Languages Section -->
+                  <div class="back-section">
+                    <h4><i class="fas fa-code"></i> Ngôn ngữ lập trình</h4>
+                    <div class="languages-list">
+                      <div class="language-item">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5 & CSS3</span>
+                      </div>
+                      <div class="language-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                      </div>
+                      <div class="language-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                      </div>
+                      <div class="language-item">
+                        <i class="fab fa-java"></i>
+                        <span>Java</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Contact Section -->
+                  <div class="back-section">
+                    <h4><i class="fas fa-envelope"></i> Liên hệ</h4>
+                    <div class="contact-info-list">
+                      <a
+                        href="mailto:leminhhuy1122@gmail.com"
+                        class="contact-link"
+                      >
+                        <i class="fas fa-envelope"></i>
+                        leminhhuy1122@gmail.com
+                      </a>
+                      <a
+                        href="https://www.facebook.com/minhhuy.sps.hunter/"
+                        target="_blank"
+                        class="contact-link"
+                      >
+                        <i class="fab fa-facebook"></i>
+                        Facebook: Lê Minh Huy
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-footer">
+                  <div class="flip-hint">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Click để lật lại mặt trước</span>
+                  </div>
+                </div>
+
+                <div class="card-pattern"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -281,146 +837,213 @@
     <section id="contact" class="contact-section section">
       <div class="container">
         <div class="section-title fade-in">
-          <h2>Liên Hệ</h2>
-          <p>Hãy để lại thông tin, tôi sẽ liên hệ lại với bạn sớm nhất</p>
+          <div class="title-decoration">
+            <span class="title-line left"></span>
+            <div class="title-icon">
+              <i class="fas fa-paper-plane"></i>
+            </div>
+            <span class="title-line right"></span>
+          </div>
+          <h2 data-text="LIÊN HỆ">
+            <span class="title-main">LIÊN HỆ</span>
+          </h2>
+          <div class="title-subtitle">
+            <span class="subtitle-dot"></span>
+            <p>
+              Hãy kết nối với tôi - Tôi luôn sẵn sàng lắng nghe ý tưởng của bạn!
+            </p>
+            <span class="subtitle-dot"></span>
+          </div>
         </div>
 
-        <div class="contact-grid fade-in">
-          <!-- Contact Info -->
-          <div class="contact-info">
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Địa chỉ</h3>
-                <p>Nha Trang, Khánh Hòa</p>
-              </div>
+        <div class="contact-modern-layout fade-in">
+          <!-- Contact Form - Center Focus -->
+          <div class="contact-form-modern">
+            <div class="form-header">
+              <h3>Gửi Tin Nhắn Cho Tôi</h3>
             </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Điện thoại</h3>
-                <p>0987653801</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Email</h3>
-                <p>leminhhuy1122@gmail.com</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-globe"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Mạng xã hội</h3>
-                <div class="social-icons-contact">
-                  <a
-                    href="https://www.facebook.com/minhhuy.sps.hunter/"
-                    target="_blank"
-                    title="Facebook"
-                  >
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <a
-                    href="https://www.instagram.com/huy.hunter.2005/"
-                    target="_blank"
-                    title="Instagram"
-                  >
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                  <a
-                    href="https://www.tiktok.com/@huy_hunterr?lang=vi-VN"
-                    target="_blank"
-                    title="TikTok"
-                  >
-                    <i class="fab fa-tiktok"></i>
-                  </a>
-                  <a href="#" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contact Form -->
-          <div class="contact-form-wrapper">
-            <form id="contactForm" class="contact-form">
+            <form id="contactForm" class="modern-form">
               <div class="form-group">
                 <label for="name"
                   >Họ và Tên <span class="required">*</span></label
                 >
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Nhập họ và tên của bạn"
-                />
+                <div class="input-wrapper">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Nhập họ và tên của bạn"
+                  />
+                  <i class="fas fa-user"></i>
+                </div>
               </div>
 
               <div class="form-group">
                 <label for="email">Email <span class="required">*</span></label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="Nhập email của bạn"
-                />
+                <div class="input-wrapper">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Nhập email của bạn"
+                  />
+                  <i class="fas fa-envelope"></i>
+                </div>
               </div>
 
               <div class="form-group">
                 <label for="phone">Số điện thoại</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Nhập số điện thoại (tùy chọn)"
-                />
+                <div class="input-wrapper">
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Nhập số điện thoại (tùy chọn)"
+                  />
+                  <i class="fas fa-phone"></i>
+                </div>
               </div>
 
               <div class="form-group">
                 <label for="subject"
                   >Chủ đề <span class="required">*</span></label
                 >
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  placeholder="Chủ đề của tin nhắn"
-                />
+                <div class="input-wrapper">
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
+                    placeholder="Chủ đề của tin nhắn"
+                  />
+                  <i class="fas fa-tag"></i>
+                </div>
               </div>
 
               <div class="form-group">
                 <label for="message"
                   >Nội dung <span class="required">*</span></label
                 >
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  required
-                  placeholder="Viết nội dung tin nhắn của bạn..."
-                ></textarea>
+                <div class="textarea-wrapper">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Viết nội dung tin nhắn của bạn..."
+                  ></textarea>
+                  <i class="fas fa-comment-dots"></i>
+                </div>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-submit">
-                <i class="fas fa-paper-plane"></i> Gửi tin nhắn
+              <button type="submit" class="btn-submit-modern">
+                <span class="btn-text">Gửi Tin Nhắn</span>
+                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
               </button>
             </form>
+          </div>
+
+          <!-- Contact Info Cards - Below Form -->
+          <div class="contact-cards-wrapper">
+            <div class="contact-card">
+              <div class="card-icon-wrapper">
+                <div class="icon-circle">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>Địa chỉ</h3>
+                <p>Nha Trang, Khánh Hòa</p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="card-icon-wrapper">
+                <div class="icon-circle">
+                  <i class="fas fa-phone"></i>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>Điện thoại</h3>
+                <p>0987653801</p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="card-icon-wrapper">
+                <div class="icon-circle">
+                  <i class="fas fa-envelope"></i>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>Email</h3>
+                <p>leminhhuy1122@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-card social-card">
+              <div class="social-card-header">
+                <div class="social-icon-main">
+                  <i class="fas fa-share-alt"></i>
+                </div>
+                <div class="social-title">
+                  <h3>Kết Nối Với Tôi</h3>
+                  <p>Theo dõi các hoạt động của tôi trên mạng xã hội</p>
+                </div>
+              </div>
+              <div class="social-links-wrapper">
+                <a
+                  href="https://www.facebook.com/minhhuy.sps.hunter/"
+                  target="_blank"
+                  class="social-link-item"
+                >
+                  <div class="social-link-icon">
+                    <i class="fab fa-facebook-f"></i>
+                  </div>
+                  <div class="social-link-info">
+                    <span class="social-name">Facebook</span>
+                    <span class="social-handle">@minhhuy.sps.hunter</span>
+                  </div>
+                </a>
+                <a
+                  href="https://www.instagram.com/huy.hunter.2005/"
+                  target="_blank"
+                  class="social-link-item"
+                >
+                  <div class="social-link-icon">
+                    <i class="fab fa-instagram"></i>
+                  </div>
+                  <div class="social-link-info">
+                    <span class="social-name">Instagram</span>
+                    <span class="social-handle">@huy.hunter.2005</span>
+                  </div>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@huy_hunterr?lang=vi-VN"
+                  target="_blank"
+                  class="social-link-item"
+                >
+                  <div class="social-link-icon">
+                    <i class="fab fa-tiktok"></i>
+                  </div>
+                  <div class="social-link-info">
+                    <span class="social-name">TikTok</span>
+                    <span class="social-handle">@huy_hunterr</span>
+                  </div>
+                </a>
+                <a href="#" target="_blank" class="social-link-item">
+                  <div class="social-link-icon">
+                    <i class="fab fa-github"></i>
+                  </div>
+                  <div class="social-link-info">
+                    <span class="social-name">GitHub</span>
+                    <span class="social-handle">@leminhhuy1122</span>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -445,40 +1068,31 @@
               trang web hiện đại và responsive.
             </p>
 
-            <!-- Statistics Section -->
-            <div class="profile-stats">
-              <h3 class="stats-title">Thành tựu & Con số</h3>
-              <div class="stats-grid">
-                <div class="stat-item">
-                  <div class="stat-icon">
-                    <i class="fas fa-project-diagram"></i>
-                  </div>
-                  <div class="stat-number" data-count="15">15</div>
-                  <div class="stat-label">Dự án hoàn thành</div>
+            <!-- Hobbies Section -->
+            <div class="hobbies-section">
+              <h3 class="hobbies-title">
+                <i class="fas fa-heart"></i> Sở Thích
+              </h3>
+              <div class="hobbies-grid">
+                <div class="hobby-item">
+                  <i class="fas fa-film"></i>
+                  <span>Xem phim</span>
                 </div>
-
-                <div class="stat-item">
-                  <div class="stat-icon">
-                    <i class="fas fa-users"></i>
-                  </div>
-                  <div class="stat-number" data-count="50">50</div>
-                  <div class="stat-label">Khách hàng hài lòng</div>
+                <div class="hobby-item">
+                  <i class="fas fa-gamepad"></i>
+                  <span>Chơi game</span>
                 </div>
-
-                <div class="stat-item">
-                  <div class="stat-icon">
-                    <i class="fas fa-code"></i>
-                  </div>
-                  <div class="stat-number" data-count="10000">10,000</div>
-                  <div class="stat-label">Dòng code viết</div>
+                <div class="hobby-item">
+                  <i class="fas fa-code"></i>
+                  <span>Coding</span>
                 </div>
-
-                <div class="stat-item">
-                  <div class="stat-icon">
-                    <i class="fas fa-clock"></i>
-                  </div>
-                  <div class="stat-number" data-count="3">3</div>
-                  <div class="stat-label">Năm kinh nghiệm</div>
+                <div class="hobby-item">
+                  <i class="fas fa-plane"></i>
+                  <span>Du lịch</span>
+                </div>
+                <div class="hobby-item">
+                  <i class="fas fa-home"></i>
+                  <span>Gia đình</span>
                 </div>
               </div>
             </div>

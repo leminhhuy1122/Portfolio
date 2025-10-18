@@ -1,3 +1,105 @@
+// Typing Effect Animation
+const typingText = document.getElementById("typingText");
+if (typingText) {
+  const text = "Web Developer";
+  let charIndex = 0;
+  let isDeleting = false;
+  let typingSpeed = 150; // Speed of typing
+  let deletingSpeed = 100; // Speed of deleting
+  let pauseBeforeDelete = 2000; // Pause before deleting
+  let pauseBeforeType = 500; // Pause before typing again
+
+  function typeWriter() {
+    if (!isDeleting) {
+      // Typing mode
+      if (charIndex < text.length) {
+        typingText.textContent = text.substring(0, charIndex + 1);
+        charIndex++;
+        setTimeout(typeWriter, typingSpeed);
+      } else {
+        // Finished typing, wait before deleting
+        setTimeout(() => {
+          isDeleting = true;
+          typeWriter();
+        }, pauseBeforeDelete);
+      }
+    } else {
+      // Deleting mode
+      if (charIndex > 0) {
+        typingText.textContent = text.substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(typeWriter, deletingSpeed);
+      } else {
+        // Finished deleting, wait before typing again
+        isDeleting = false;
+        setTimeout(typeWriter, pauseBeforeType);
+      }
+    }
+  }
+
+  // Start the typing effect after page load
+  setTimeout(() => {
+    typeWriter();
+  }, 500);
+}
+
+// Header hide/show on scroll with active menu highlighting
+const header = document.querySelector(".header");
+let lastScrollTop = 0;
+
+function handleHeaderScroll() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Hide header at top, show when scrolling down
+  if (scrollTop < 100) {
+    header.classList.add("hidden");
+    header.classList.remove("scrolled");
+  } else {
+    header.classList.remove("hidden");
+    header.classList.add("scrolled");
+  }
+
+  lastScrollTop = scrollTop;
+}
+
+// Active menu highlighting based on scroll position
+function highlightActiveSection() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  let currentSection = "";
+  const scrollPosition = window.pageYOffset + 200; // Offset for better detection
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+
+    if (
+      scrollPosition >= sectionTop &&
+      scrollPosition < sectionTop + sectionHeight
+    ) {
+      currentSection = section.getAttribute("id");
+    }
+  });
+
+  // Update active class on nav links
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${currentSection}`) {
+      link.classList.add("active");
+    }
+  });
+}
+
+// Combine scroll handlers
+function handleScroll() {
+  handleHeaderScroll();
+  highlightActiveSection();
+}
+
+window.addEventListener("scroll", handleScroll);
+window.addEventListener("load", handleScroll);
+
 // Simple animation on scroll
 function animateOnScroll() {
   const elements = document.querySelectorAll(".fade-in");
@@ -461,3 +563,61 @@ if (skillsSection) {
 
   observer.observe(skillsSection);
 }
+
+// Timeline Road scroll animation is handled by CSS
+// Profile section uses simple hover effects, no additional JavaScript needed
+
+// Student Card Modal functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const showCardBtn = document.getElementById("showStudentCard");
+  const closeCardBtn = document.getElementById("closeStudentCard");
+  const cardModal = document.getElementById("studentCardModal");
+  const cardFlip = document.getElementById("studentCardFlip");
+  const modalBackdrop = cardModal?.querySelector(".modal-backdrop");
+
+  // Show modal
+  if (showCardBtn && cardModal) {
+    showCardBtn.addEventListener("click", function () {
+      cardModal.classList.add("show");
+      document.body.style.overflow = "hidden";
+    });
+  }
+
+  // Close modal
+  function closeModal() {
+    if (cardModal) {
+      cardModal.classList.remove("show");
+      document.body.style.overflow = "auto";
+      // Reset flip state when closing
+      if (cardFlip && cardFlip.classList.contains("flipped")) {
+        cardFlip.classList.remove("flipped");
+      }
+    }
+  }
+
+  if (closeCardBtn) {
+    closeCardBtn.addEventListener("click", closeModal);
+  }
+
+  // Close on backdrop click
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener("click", closeModal);
+  }
+
+  // Close with Escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && cardModal?.classList.contains("show")) {
+      closeModal();
+    }
+  });
+
+  // Flip card on click
+  if (cardFlip) {
+    cardFlip.addEventListener("click", function (e) {
+      // Don't flip if clicking on close button or links
+      if (!e.target.closest(".close-card-btn") && !e.target.closest("a")) {
+        this.classList.toggle("flipped");
+      }
+    });
+  }
+});
