@@ -1331,6 +1331,124 @@ html {
   }
 }
 
+/* Scroll Down Button */
+.scroll-down-wrapper {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  animation: fadeInUp 1s ease 1.5s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.scroll-down-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.scroll-down-icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(110, 231, 255, 0.3);
+  box-shadow: 
+    0 0 20px rgba(102, 126, 234, 0.4),
+    0 0 40px rgba(118, 75, 162, 0.3),
+    inset 0 0 20px rgba(110, 231, 255, 0.1);
+  transition: all 0.4s ease;
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+.scroll-down-icon::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.scroll-down-icon i {
+  font-size: 24px;
+  color: #6ee7ff;
+  filter: drop-shadow(0 0 8px rgba(110, 231, 255, 0.8));
+  animation: scrollBounce 1.5s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.scroll-down-btn:hover .scroll-down-icon {
+  transform: scale(1.1);
+  border-color: rgba(110, 231, 255, 0.6);
+  box-shadow: 
+    0 0 30px rgba(102, 126, 234, 0.6),
+    0 0 60px rgba(118, 75, 162, 0.5),
+    inset 0 0 30px rgba(110, 231, 255, 0.2);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+}
+
+.scroll-down-btn:hover .scroll-down-icon::before {
+  opacity: 0.3;
+}
+
+.scroll-down-btn:hover .scroll-down-icon i {
+  color: #ffffff;
+  filter: drop-shadow(0 0 12px rgba(110, 231, 255, 1));
+  transform: translateY(3px);
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(102, 126, 234, 0.4),
+      0 0 40px rgba(118, 75, 162, 0.3),
+      inset 0 0 20px rgba(110, 231, 255, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(102, 126, 234, 0.6),
+      0 0 60px rgba(118, 75, 162, 0.5),
+      inset 0 0 30px rgba(110, 231, 255, 0.2);
+  }
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
 /* Buttons - Modern Gradient Design */
 .btn {
   display: inline-block;
@@ -5251,94 +5369,120 @@ html {
   border-radius: 1px;
 }
 
-/* Footer */
+/* ============================================
+   FOOTER - Simple & Minimal Design
+   ============================================ */
+
 .footer {
-  background: #0b1426;
-  text-align: center;
-  padding: 40px 0;
-  border-top: 1px solid var(--card-border);
+  background: rgba(11, 20, 38, 0.95);
+  padding: 25px 0;
+  border-top: 1px solid rgba(110, 231, 255, 0.1);
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  padding: 0 30px;
 }
 
 .footer-text {
-  color: var(--text-secondary);
-  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin: 0;
 }
 
-.social-links {
+.footer-text a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-text a:hover {
+  color: #6ee7ff;
+}
+
+.footer .social-links {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  gap: 15px;
+  align-items: center;
 }
 
-.social-link {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+.footer .social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 1.2rem;
 }
 
-.social-link::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
+.footer .social-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-.social-link.facebook {
-  background: rgba(59, 89, 152, 0.1);
+/* Platform specific hover colors */
+.footer .social-link.facebook:hover {
+  background: #4267b2;
+  border-color: #4267b2;
 }
 
-.social-link.facebook::before {
-  background: linear-gradient(135deg, #3b5998, #8b9dc3);
+.footer .social-link.instagram:hover {
+  background: linear-gradient(135deg, #e1306c, #c13584);
+  border-color: #e1306c;
 }
 
-.social-link.instagram {
-  background: rgba(225, 48, 108, 0.1);
+.footer .social-link.tiktok:hover {
+  background: #000000;
+  border-color: #00f2ea;
 }
 
-.social-link.instagram::before {
-  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+.footer .social-link.github:hover {
+  background: #24292e;
+  border-color: #24292e;
 }
 
-.social-link.tiktok {
-  background: rgba(0, 0, 0, 0.1);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer .container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .footer .social-links {
+    gap: 12px;
+  }
+
+  .footer .social-link {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
 }
 
-.social-link.tiktok::before {
-  background: linear-gradient(135deg, #000000, #ff0050);
-}
-
-.social-link.github {
-  background: rgba(33, 31, 31, 0.1);
-}
-
-.social-link.github::before {
-  background: linear-gradient(135deg, #333, #666);
-}
-
-.social-link:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.social-link:hover::before {
-  opacity: 1;
+/* Hide unnecessary elements */
+.footer-brand,
+.footer-logo,
+.footer-tagline,
+.footer-badge {
+  display: none;
 }
 
 /* Animation Classes */
