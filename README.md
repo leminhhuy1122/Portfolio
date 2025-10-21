@@ -1,92 +1,50 @@
-<div align="center"># Team Portfolio Website - Backup GK
+<div align="center">
 
+# 🌟 Team Portfolio Website
 
-
-# 🌟 Team Portfolio Website## Mô tả dự án
-
-Đây là website portfolio tập thể của nhóm sinh viên, bao gồm portfolio cá nhân của từng thành viên trong nhóm.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=6EE7FF&center=true&vCenter=true&multiline=true&width=600&height=80&lines=Welcome+to+Our+Team+Portfolio!;Showcasing+Our+Web+Development+Skills" alt="Typing SVG" />
 
 ### ✨ Modern & Responsive Portfolio Collection ✨
 
-## Cấu trúc dự án
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)```
-
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)├── index.html              # Trang chủ chính của nhóm
-
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)├── team-styles.css         # CSS cho trang chủ nhóm
-
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)├── baoTram/               # Portfolio của Bảo Trâm
-
-├── chiDung/               # Portfolio của Chí Dũng
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=6EE7FF&center=true&vCenter=true&multiline=true&width=600&height=80&lines=Welcome+to+Our+Team+Portfolio!;Showcasing+Our+Web+Development+Skills" alt="Typing SVG" />├── huyHunter/             # Portfolio của Minh Huy
-
-├── MinhMan/               # Portfolio của Minh Mẫn
-
-[🌐 Live Demo](#) | [📖 Documentation](#) | [👥 Team](#team-members)└── minhNhat/              # Portfolio của Minh Nhật
-
-```
+[🌐 Live Demo](https://leminhhuy1122.github.io/Portfolio/) | [📖 Documentation](#-getting-started) | [👥 Team](#-team-members)
 
 </div>
 
-## Thành viên nhóm
+---
 
----- **Bảo Trâm** - `baoTram/baoTram.html`
+## 📋 Table of Contents
 
-- **Chí Dũng** - `chiDung/chiDung.html`
+- [About The Project](#-about-the-project)
+- [Features](#-features)
+- [Team Members](#-team-members)
+- [Technologies](#️-technologies)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Screenshots](#-screenshots)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
 
-## 📋 Table of Contents- **Minh Huy** - `huyHunter/minhhuy.html`
+---
 
-- **Minh Mẫn** - `MinhMan/MinhMan/minhMan.html`
-
-- [About The Project](#about-the-project)- **Minh Nhật** - `minhNhat/minhNhat.html`
-
-- [Features](#features)
-
-- [Team Members](#team-members)## Cách sử dụng
-
-- [Technologies](#technologies)1. Mở file `index.html` trong trình duyệt để xem trang chủ nhóm
-
-- [Project Structure](#project-structure)2. Click vào tên các thành viên để truy cập portfolio cá nhân
-
-- [Getting Started](#getting-started)
-
-- [Screenshots](#screenshots)## Công nghệ sử dụng
-
-- [Contributing](#contributing)- HTML5
-
-- [License](#license)- CSS3
-
-- [Contact](#contact)- JavaScript
-
-- Bootstrap
-
----- AOS (Animate On Scroll)
-
-- GLightbox
-
-## 🎯 About The Project- Swiper
-
-- TypedJS
+## 🎯 About The Project
 
 > A **stunning collection** of individual portfolios showcasing our team's web development skills and creativity. Each portfolio is uniquely designed with modern UI/UX principles, glassmorphism effects, and smooth animations.
 
-## Cách triển khai
+Website portfolio tập thể của nhóm sinh viên, bao gồm portfolio cá nhân của từng thành viên với thiết kế độc đáo và sáng tạo.
 
-### 🎨 Design Philosophy1. Clone repository này
+### 🎨 Design Philosophy
 
-2. Mở file `index.html` bằng trình duyệt hoặc triển khai lên web server
-
-- **Modern & Clean**: Minimalist design with focus on content
-
-- **Glassmorphism**: Beautiful glass-morphic UI elements## Ghi chú
-
-- **Dark Theme**: Eye-friendly dark color schemes- Tất cả đường dẫn file đã được kiểm tra và đảm bảo hoạt động chính xác
-
-- **Responsive**: Perfect on all devices - desktop, tablet, mobile- Mỗi thành viên có thư mục riêng với cấu trúc assets độc lập
-
-- **Animated**: Smooth animations and transitions using AOS- Website responsive và tương thích với các thiết bị di động
+- 🎨 **Modern & Clean** - Minimalist design with focus on content
+- ✨ **Glassmorphism** - Beautiful glass-morphic UI elements
+- 🌙 **Dark Theme** - Eye-friendly dark color schemes
+- 📱 **Responsive** - Perfect on all devices (desktop, tablet, mobile)
+- 🎭 **Animated** - Smooth animations and transitions using AOS
 
 ---
 
@@ -141,13 +99,13 @@
 
 <div align="center">
 
-| Member | Portfolio | Specialization |
-|--------|-----------|----------------|
-| **Triệu Thị Bảo Trâm** | [View Portfolio](./baoTram/baoTram.html) | 💻 Full-stack Developer |
-| **Chí Dũng** | [View Portfolio](./chiDung/chiDung.html) | 🎨 Frontend Developer |
-| **Minh Huy** | [View Portfolio](./huyHunter/minhhuy.html) | ⚡ Web Developer |
-| **Minh Mẫn** | [View Portfolio](./MinhMan/MinhMan/minhMan.html) | 🚀 UI/UX Developer |
-| **Minh Nhật** | [View Portfolio](./minhNhat/minhNhat.html) | 🌐 Web Designer |
+| 👤 Member              | 🔗 Portfolio                                     | 💼 Specialization       | 📧 Contact            |
+| ---------------------- | ------------------------------------------------ | ----------------------- | --------------------- |
+| **Triệu Thị Bảo Trâm** | [View Portfolio](./baoTram/baoTram.html)         | 💻 Full-stack Developer | tramttb0715@ut.edu.vn |
+| **Chí Dũng**           | [View Portfolio](./chiDung/chiDung.html)         | 🎨 Frontend Developer   | -                     |
+| **Minh Huy**           | [View Portfolio](./huyHunter/minhhuy.html)       | ⚡ Web Developer        | -                     |
+| **Dương Minh Mẫn**     | [View Portfolio](./MinhMan/MinhMan/minhMan.html) | 🚀 UI/UX Developer      | mandm5433@ut.edu.vn   |
+| **Minh Nhật**          | [View Portfolio](./minhNhat/minhNhat.html)       | 🌐 Web Designer         | -                     |
 
 </div>
 
@@ -158,16 +116,19 @@
 <div align="center">
 
 ### Core Technologies
+
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 ### Frameworks & Libraries
+
 ![Bootstrap](https://img.shields.io/badge/Bootstrap_5-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
 ![AOS](https://img.shields.io/badge/AOS-3.0-blue?style=flat-square)
 ![Typed.js](https://img.shields.io/badge/Typed.js-2.0-green?style=flat-square)
 
 ### Tools & Plugins
+
 - **Bootstrap Icons** - Icon library
 - **GLightbox** - Lightbox gallery
 - **Swiper** - Touch slider
@@ -180,39 +141,43 @@
 
 ## 📁 Project Structure
 
-```
+```bash
 Portfolio/
 │
-├── 📄 index.html                    # Team homepage
-├── 🎨 team-styles.css              # Team homepage styles
-├── 📖 README.md                     # Project documentation
+├── 📄 index.html              # Team homepage
+├── 🎨 team-styles.css         # Team homepage styles
+├── 📖 README.md               # Project documentation
 │
-├── 📁 baoTram/                      # Bảo Trâm's Portfolio
+├── 📁 baoTram/                # Bảo Trâm's Portfolio
 │   ├── baoTram.html
 │   └── assets/
-│       ├── img/                     # Images
-│       └── vendor/                  # Libraries (CDN)
+│       ├── img/               # Images
+│       └── vendor/            # Libraries (Bootstrap Icons via CDN)
 │
-├── 📁 chiDung/                      # Chí Dũng's Portfolio
+├── 📁 chiDung/                # Chí Dũng's Portfolio
 │   ├── chiDung.html
 │   └── static/
 │       ├── style.css
 │       ├── script.js
 │       └── images/
 │
-├── 📁 huyHunter/                    # Minh Huy's Portfolio
+├── 📁 huyHunter/              # Minh Huy's Portfolio
 │   ├── minhhuy.html
 │   └── assets/
 │       ├── css/
 │       ├── js/
 │       └── img/
 │
-├── 📁 MinhMan/                      # Minh Mẫn's Portfolio
+├── 📁 MinhMan/                # Minh Mẫn's Portfolio
 │   └── MinhMan/
 │       ├── minhMan.html
 │       └── assets/
+│           ├── css/
+│           ├── js/
+│           ├── img/
+│           └── vendor/
 │
-└── 📁 minhNhat/                     # Minh Nhật's Portfolio
+└── 📁 minhNhat/               # Minh Nhật's Portfolio
     ├── minhNhat.html
     ├── css/
     ├── js/
@@ -236,7 +201,10 @@ Portfolio/
    git clone https://github.com/leminhhuy1122/Portfolio.git
    ```
 
+````
+
 2. **Navigate to project directory**
+
    ```bash
    cd Portfolio
    ```
@@ -267,9 +235,11 @@ Then visit: `http://localhost:8000`
 <div align="center">
 
 ### 🏠 Team Homepage
+
 <img src="https://via.placeholder.com/800x400/0b1020/6ee7ff?text=Team+Homepage" alt="Team Homepage" width="100%"/>
 
 ### 💼 Individual Portfolios
+
 <table>
   <tr>
     <td><img src="https://via.placeholder.com/400x300/1a1f3a/7aa8ff?text=Bao+Tram" width="100%"/></td>
@@ -285,19 +255,24 @@ Then visit: `http://localhost:8000`
 
 ---
 
-## 🎨 Key Features by Portfolio
+## 🎨 Highlights
 
-### 🌟 Bảo Trâm's Portfolio
+### 🌟 Featured Portfolios
+
+#### Bảo Trâm's Portfolio
 - ✨ **Glassmorphism Design** - Modern glass-effect UI
 - 🎭 **Smooth Animations** - AOS scroll animations
 - 📱 **Fully Responsive** - Mobile-first design
-- 🎨 **Custom Styling** - Unique gradient themes
 - 💫 **Interactive Elements** - Hover effects & transitions
 - 🔥 **Typed.js Effect** - Dynamic text animation
-- 📧 **Contact Form** - Functional contact section
-- 🎯 **Skills Showcase** - Visual progress bars
-- 💼 **Service Cards** - Modern service display
-- 🚀 **Performance Optimized** - Fast loading with CDN
+- � **Performance Optimized** - Fast loading with CDN
+
+#### Minh Mẫn's Portfolio
+- 🎨 **Premium Navigation** - Glassmorphism menu with animated icons
+- 🌊 **Liquid Effects** - Smooth hover transitions
+- ⚡ **Skill Progress Bars** - Animated frontend/backend/database skills
+- 💼 **Project Showcase** - Modern project cards with tags
+- 🎯 **3D Image Slider** - Interactive hero section carousel
 
 ---
 
@@ -331,25 +306,54 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Project Link:** [https://github.com/leminhhuy1122/Portfolio](https://github.com/leminhhuy1122/Portfolio)
 
-</div>
-
 ---
-
-<div align="center">
 
 ## ⭐ Show Your Support
 
 Give a ⭐️ if you like this project!
 
-### 🙏 Acknowledgments
+---
 
-- [Bootstrap](https://getbootstrap.com/)
-- [Bootstrap Icons](https://icons.getbootstrap.com/)
-- [AOS Library](https://michalsnik.github.io/aos/)
-- [Typed.js](https://github.com/mattboldt/typed.js/)
-- [GLightbox](https://biati-digital.github.io/glightbox/)
-- [Swiper](https://swiperjs.com/)
-- [Google Fonts](https://fonts.google.com/)
+## 🙏 Acknowledgments
+
+<table align="center">
+<tr>
+<td align="center">
+<a href="https://getbootstrap.com/"><img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white" /></a><br/>
+<sub><b>Bootstrap</b></sub>
+</td>
+<td align="center">
+<a href="https://icons.getbootstrap.com/"><img src="https://img.shields.io/badge/Bootstrap_Icons-7952B3?style=flat-square&logo=bootstrap&logoColor=white" /></a><br/>
+<sub><b>Bootstrap Icons</b></sub>
+</td>
+<td align="center">
+<a href="https://michalsnik.github.io/aos/"><img src="https://img.shields.io/badge/AOS-3.0-blue?style=flat-square" /></a><br/>
+<sub><b>AOS Library</b></sub>
+</td>
+<td align="center">
+<a href="https://github.com/mattboldt/typed.js/"><img src="https://img.shields.io/badge/Typed.js-2.0-green?style=flat-square" /></a><br/>
+<sub><b>Typed.js</b></sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<a href="https://biati-digital.github.io/glightbox/"><img src="https://img.shields.io/badge/GLightbox-lightbox-orange?style=flat-square" /></a><br/>
+<sub><b>GLightbox</b></sub>
+</td>
+<td align="center">
+<a href="https://swiperjs.com/"><img src="https://img.shields.io/badge/Swiper-slider-blue?style=flat-square" /></a><br/>
+<sub><b>Swiper</b></sub>
+</td>
+<td align="center">
+<a href="https://fonts.google.com/"><img src="https://img.shields.io/badge/Google_Fonts-typography-red?style=flat-square" /></a><br/>
+<sub><b>Google Fonts</b></sub>
+</td>
+<td align="center">
+<a href="https://isotope.metafizzy.co/"><img src="https://img.shields.io/badge/Isotope-layout-purple?style=flat-square" /></a><br/>
+<sub><b>Isotope</b></sub>
+</td>
+</tr>
+</table>
 
 ---
 
@@ -360,3 +364,4 @@ Give a ⭐️ if you like this project!
 **© 2025 Team Portfolio. All Rights Reserved.**
 
 </div>
+````
