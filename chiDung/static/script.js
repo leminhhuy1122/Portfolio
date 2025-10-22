@@ -51,31 +51,33 @@ function initializeNavigation() {
 
 // Progress bars animation
 function initializeProgressBars() {
-    const progressBars = document.querySelectorAll('.progress-bar');
+    const progressFills = document.querySelectorAll('.skill-progress-fill');
     
     // Intersection Observer for progress bars
     const progressObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const progressBar = entry.target;
-                const targetWidth = progressBar.getAttribute('data-width') || 
-                                  progressBar.style.width;
+                const progressFill = entry.target;
+                const targetWidth = progressFill.getAttribute('data-progress');
                 
                 // Animate progress bar
-                progressBar.style.width = '0%';
                 setTimeout(() => {
-                    progressBar.style.transition = 'width 1.5s ease-out';
-                    progressBar.style.width = targetWidth;
+                    progressFill.style.width = targetWidth + '%';
                 }, 200);
                 
                 // Unobserve after animation
-                progressObserver.unobserve(progressBar);
+                progressObserver.unobserve(progressFill);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
     
-    progressBars.forEach(bar => {
-        // Store original width
+    progressFills.forEach(fill => {
+        progressObserver.observe(fill);
+    });
+    
+    // Also handle old progress bars if they exist
+    const oldProgressBars = document.querySelectorAll('.progress-bar');
+    oldProgressBars.forEach(bar => {
         if (!bar.getAttribute('data-width')) {
             bar.setAttribute('data-width', bar.style.width);
         }
