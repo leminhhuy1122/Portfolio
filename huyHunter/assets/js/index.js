@@ -694,3 +694,238 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+/* ==========================================
+   GALLERY LIGHTBOX FUNCTIONALITY
+   ========================================== */
+
+// Gallery data
+const galleryData = [
+  {
+    src: "assets/img/huy/1.jpg",
+    title: "Khoảnh khắc thư giãn",
+    description:
+      "Tận hưởng không gian yên bình tại một quán cafe xinh đẹp ở Dalat",
+    location: "Dalat, Vietnam",
+    tags: [
+      { icon: "fas fa-heart", text: "Lifestyle" },
+      { icon: "fas fa-camera", text: "Photography" },
+    ],
+  },
+  {
+    src: "assets/img/huy/2.jpg",
+    title: "Đêm lung linh",
+    description: "Khám phá vẻ đẹp ban đêm của không gian độc đáo",
+    location: "Night Time",
+    tags: [
+      { icon: "fas fa-moon", text: "Night" },
+      { icon: "fas fa-city", text: "Urban" },
+    ],
+  },
+  {
+    src: "assets/img/huy/3.jpg",
+    title: "Tĩnh lặng",
+    description: "Giây phút suy ngẫm giữa thiên nhiên xanh mát",
+    location: "Garden",
+    tags: [
+      { icon: "fas fa-leaf", text: "Nature" },
+      { icon: "fas fa-spa", text: "Relax" },
+    ],
+  },
+  {
+    src: "assets/img/huy/4.jpg",
+    title: "Hoàng hôn tuyệt đẹp",
+    description: "Ngắm nhìn bình minh tuyệt đẹp trên bờ biển Nha Trang",
+    location: "Nha Trang Beach",
+    tags: [
+      { icon: "fas fa-sun", text: "Sunset" },
+      { icon: "fas fa-water", text: "Beach" },
+      { icon: "fas fa-umbrella-beach", text: "Ocean" },
+    ],
+  },
+];
+
+let currentImageIndex = 0;
+
+document.addEventListener("DOMContentLoaded", function () {
+  const lightbox = document.getElementById("galleryLightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const imageLoader = document.querySelector(".image-loader");
+  const closeLightboxBtn = document.getElementById("closeLightbox");
+  const prevBtn = document.getElementById("prevImage");
+  const nextBtn = document.getElementById("nextImage");
+  const viewAllBtn = document.querySelector(".btn-open-gallery");
+  const galleryItems = document.querySelectorAll(
+    ".gallery-item:not(.view-all)"
+  );
+  const thumbnails = document.querySelectorAll(".thumbnail-item");
+
+  // Open lightbox from "View All" button
+  if (viewAllBtn) {
+    viewAllBtn.addEventListener("click", function () {
+      openLightbox(0);
+    });
+  }
+
+  // Open lightbox from gallery items
+  galleryItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const photoIndex = parseInt(this.getAttribute("data-photo-index"));
+      if (!isNaN(photoIndex)) {
+        openLightbox(photoIndex);
+      }
+    });
+  });
+
+  // Open lightbox from thumbnails
+  thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener("click", function () {
+      const index = parseInt(this.getAttribute("data-index"));
+      showImage(index);
+    });
+  });
+
+  // Close lightbox
+  if (closeLightboxBtn) {
+    closeLightboxBtn.addEventListener("click", closeLightbox);
+  }
+
+  // Close on overlay click
+  const lightboxOverlay = document.querySelector(".lightbox-overlay");
+  if (lightboxOverlay) {
+    lightboxOverlay.addEventListener("click", closeLightbox);
+  }
+
+  // Navigation
+  if (prevBtn) {
+    prevBtn.addEventListener("click", showPrevImage);
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", showNextImage);
+  }
+
+  // Keyboard navigation
+  document.addEventListener("keydown", function (e) {
+    if (!lightbox.classList.contains("active")) return;
+
+    switch (e.key) {
+      case "Escape":
+        closeLightbox();
+        break;
+      case "ArrowLeft":
+        showPrevImage();
+        break;
+      case "ArrowRight":
+        showNextImage();
+        break;
+    }
+  });
+
+  // Functions
+  function openLightbox(index) {
+    currentImageIndex = index;
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+    showImage(index);
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  function showImage(index) {
+    currentImageIndex = index;
+    const data = galleryData[index];
+
+    // Show loader
+    imageLoader.classList.remove("hidden");
+    lightboxImage.classList.remove("loaded");
+
+    // Update image
+    lightboxImage.src = data.src;
+    lightboxImage.onload = function () {
+      imageLoader.classList.add("hidden");
+      lightboxImage.classList.add("loaded");
+    };
+
+    // Update info
+    document.getElementById("lightboxTitle").textContent = data.title;
+    document.getElementById("lightboxDescription").textContent =
+      data.description;
+    document.getElementById("lightboxLocation").textContent = data.location;
+    document.getElementById("currentImageNum").textContent = index + 1;
+    document.getElementById("totalImages").textContent = galleryData.length;
+
+    // Update tags
+    const tagsContainer = document.getElementById("lightboxTags");
+    tagsContainer.innerHTML = data.tags
+      .map(
+        (tag) => `
+      <span class="tag">
+        <i class="${tag.icon}"></i>
+        ${tag.text}
+      </span>
+    `
+      )
+      .join("");
+
+    // Update thumbnails
+    thumbnails.forEach((thumb, i) => {
+      thumb.classList.toggle("active", i === index);
+    });
+
+    // Scroll thumbnail into view
+    const activeThumbnail = document.querySelector(".thumbnail-item.active");
+    if (activeThumbnail) {
+      activeThumbnail.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  }
+
+  function showPrevImage() {
+    currentImageIndex =
+      (currentImageIndex - 1 + galleryData.length) % galleryData.length;
+    showImage(currentImageIndex);
+  }
+
+  function showNextImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryData.length;
+    showImage(currentImageIndex);
+  }
+
+  // Touch swipe support for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  lightbox.addEventListener(
+    "touchstart",
+    function (e) {
+      touchStartX = e.changedTouches[0].screenX;
+    },
+    false
+  );
+
+  lightbox.addEventListener(
+    "touchend",
+    function (e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    },
+    false
+  );
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    if (touchEndX < touchStartX - swipeThreshold) {
+      showNextImage();
+    }
+    if (touchEndX > touchStartX + swipeThreshold) {
+      showPrevImage();
+    }
+  }
+});

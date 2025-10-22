@@ -53,6 +53,13 @@
               <span>Kinh Nghiệm</span>
             </span>
           </a>
+          <a href="#gallery" class="nav-link">
+            <span class="link-bg"></span>
+            <span class="link-content">
+              <i class="fas fa-images"></i>
+              <span>Bộ Sưu Tập</span>
+            </span>
+          </a>
           <a href="#contact" class="nav-link">
             <span class="link-bg"></span>
             <span class="link-content">
@@ -687,6 +694,117 @@
       </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section section">
+      <div class="container">
+        <!-- Compact Title -->
+        <div class="gallery-header fade-in">
+          <h2 class="section-title">
+            <span class="title-icon">📸</span>
+            Bộ Sưu Tập
+          </h2>
+          <p class="section-subtitle">Những khoảnh khắc đáng nhớ</p>
+        </div>
+
+        <!-- Compact Gallery Grid -->
+        <div class="gallery-grid fade-in">
+          <!-- Photo 1 -->
+          <div class="gallery-item" data-photo-index="0">
+            <div class="item-wrapper">
+              <img src="assets/img/huy/1.jpg" alt="Photo 1" loading="lazy" />
+              <div class="item-overlay">
+                <div class="overlay-content">
+                  <span class="photo-number">01</span>
+                  <h3 class="photo-name">Khoảnh khắc thư giãn</h3>
+                  <button class="view-btn">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 2 -->
+          <div class="gallery-item" data-photo-index="1">
+            <div class="item-wrapper">
+              <img src="assets/img/huy/2.jpg" alt="Photo 2" loading="lazy" />
+              <div class="item-overlay">
+                <div class="overlay-content">
+                  <span class="photo-number">02</span>
+                  <h3 class="photo-name">Đêm lung linh</h3>
+                  <button class="view-btn">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 3 -->
+          <div class="gallery-item" data-photo-index="2">
+            <div class="item-wrapper">
+              <img src="assets/img/huy/3.jpg" alt="Photo 3" loading="lazy" />
+              <div class="item-overlay">
+                <div class="overlay-content">
+                  <span class="photo-number">03</span>
+                  <h3 class="photo-name">Tĩnh lặng</h3>
+                  <button class="view-btn">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 4 -->
+          <div class="gallery-item" data-photo-index="3">
+            <div class="item-wrapper">
+              <img src="assets/img/huy/4.jpg" alt="Photo 4" loading="lazy" />
+              <div class="item-overlay">
+                <div class="overlay-content">
+                  <span class="photo-number">04</span>
+                  <h3 class="photo-name">Hoàng hôn tuyệt đẹp</h3>
+                  <button class="view-btn">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- View All Card -->
+          <div class="gallery-item view-all">
+            <div class="view-all-wrapper">
+              <div class="view-all-content">
+                <div class="view-icon">
+                  <i class="fas fa-images"></i>
+                </div>
+                <h3>Xem Tất Cả</h3>
+                <p class="photo-count">4 Ảnh</p>
+                <button class="btn-open-gallery">
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider - Top -->
+    <div class="section-divider">
+      <div class="divider-line">
+        <span class="divider-glow"></span>
+      </div>
+      <div class="divider-particles">
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+      </div>
+    </div>
+
     <!-- Profile Card Section -->
     <section class="profile-card-section section">
       <!-- Background Decorations -->
@@ -888,27 +1006,25 @@
       </div>
     </section>
 
+    <!-- Section Divider - Bottom -->
+    <div class="section-divider">
+      <div class="divider-line">
+        <span class="divider-glow"></span>
+      </div>
+      <div class="divider-particles">
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+      </div>
+    </div>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section section">
       <div class="container">
         <div class="section-title fade-in">
-          <div class="title-decoration">
-            <span class="title-line left"></span>
-            <div class="title-icon">
-              <i class="fas fa-paper-plane"></i>
-            </div>
-            <span class="title-line right"></span>
-          </div>
-          <h2 data-text="LIÊN HỆ">
-            <span class="title-main">LIÊN HỆ</span>
-          </h2>
-          <div class="title-subtitle">
-            <span class="subtitle-dot"></span>
-            <p>
-              Hãy kết nối với tôi - Tôi luôn sẵn sàng lắng nghe ý tưởng của bạn!
-            </p>
-            <span class="subtitle-dot"></span>
-          </div>
+          <h2 class="title-main" data-text="LIÊN HỆ">LIÊN HỆ</h2>
         </div>
 
         <div class="contact-modern-layout fade-in">
@@ -1233,6 +1349,79 @@
         </div>
       </div>
     </footer>
+
+    <!-- Gallery Lightbox Modal -->
+    <div id="galleryLightbox" class="gallery-lightbox">
+      <div class="lightbox-overlay"></div>
+      <div class="lightbox-container">
+        <!-- Close Button -->
+        <button class="lightbox-close" id="closeLightbox">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <!-- Navigation Arrows -->
+        <button class="lightbox-nav prev" id="prevImage">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav next" id="nextImage">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Image Display -->
+        <div class="lightbox-content">
+          <div class="lightbox-image-wrapper">
+            <img id="lightboxImage" src="" alt="Gallery image" />
+            <div class="image-loader">
+              <div class="loader-spinner"></div>
+            </div>
+          </div>
+
+          <!-- Image Info -->
+          <div class="lightbox-info">
+            <div class="info-header">
+              <h3 id="lightboxTitle">Image Title</h3>
+              <div class="image-counter">
+                <span id="currentImageNum">1</span> /
+                <span id="totalImages">4</span>
+              </div>
+            </div>
+            <p id="lightboxDescription">Image description</p>
+            <div class="lightbox-tags" id="lightboxTags">
+              <!-- Tags will be inserted here -->
+            </div>
+            <div class="lightbox-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span id="lightboxLocation">Location</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thumbnail Navigation -->
+        <div class="lightbox-thumbnails">
+          <div class="thumbnail-track" id="thumbnailTrack">
+            <div class="thumbnail-item active" data-index="0">
+              <img src="assets/img/huy/1.jpg" alt="Thumbnail 1" />
+            </div>
+            <div class="thumbnail-item" data-index="1">
+              <img src="assets/img/huy/2.jpg" alt="Thumbnail 2" />
+            </div>
+            <div class="thumbnail-item" data-index="2">
+              <img src="assets/img/huy/3.jpg" alt="Thumbnail 3" />
+            </div>
+            <div class="thumbnail-item" data-index="3">
+              <img src="assets/img/huy/4.jpg" alt="Thumbnail 4" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Keyboard Navigation Hint -->
+      <div class="keyboard-hint">
+        <span><kbd>←</kbd> Trước</span>
+        <span><kbd>→</kbd> Sau</span>
+        <span><kbd>ESC</kbd> Đóng</span>
+      </div>
+    </div>
 
     <!-- Custom Notification Modal -->
     <div id="customNotification" class="custom-notification-overlay">
