@@ -73,6 +73,39 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Back-to-top button behavior
+(function () {
+  const backBtn = document.getElementById("backToTop");
+  if (!backBtn) return;
+
+  // Show when scrolled down
+  function toggleBackBtn() {
+    const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrolled > 320) {
+      backBtn.classList.add("visible");
+    } else {
+      backBtn.classList.remove("visible");
+    }
+  }
+
+  // Smooth scroll to top
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // Click and keyboard support
+  backBtn.addEventListener("click", scrollToTop);
+  backBtn.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
+      e.preventDefault();
+      scrollToTop();
+    }
+  });
+
+  window.addEventListener("scroll", toggleBackBtn);
+  window.addEventListener("load", toggleBackBtn);
+})();
+
 // Typing Effect Animation
 const typingText = document.getElementById("typingText");
 if (typingText) {

@@ -37,6 +37,113 @@
 }
 
 /* Removed underline for contact title */
+
+/* Back-to-top floating button - glassmorphic + gradient ring */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: 0 10px 30px rgba(11, 20, 38, 0.6),
+    0 6px 18px rgba(59, 130, 246, 0.08);
+  z-index: 9999;
+  transform: translateY(20px) scale(0.96);
+  opacity: 0;
+  transition: opacity 220ms ease, transform 220ms cubic-bezier(0.2, 0.9, 0.3, 1),
+    box-shadow 220ms ease;
+  cursor: pointer;
+  position: fixed;
+}
+
+/* soft gradient ring using pseudo-element */
+.back-to-top::before {
+  content: "";
+  position: absolute;
+  inset: -6px; /* ring outside the button */
+  border-radius: 50%;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(59, 130, 246, 0.9),
+    rgba(139, 92, 246, 0.85),
+    rgba(236, 72, 153, 0.9),
+    rgba(59, 130, 246, 0.6)
+  );
+  filter: blur(10px);
+  opacity: 0.45;
+  pointer-events: none;
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.back-to-top::after {
+  content: "";
+  position: absolute;
+  inset: 3px; /* inner subtle highlight */
+  border-radius: 50%;
+  background: radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.08),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 70% 75%,
+      rgba(255, 255, 255, 0.03),
+      transparent 45%
+    );
+  pointer-events: none;
+}
+
+.back-to-top i {
+  font-size: 18px;
+  z-index: 2;
+  transform: translateY(-1px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 18px 50px rgba(11, 20, 38, 0.65),
+    0 8px 30px rgba(59, 130, 246, 0.12);
+}
+
+.back-to-top:hover::before {
+  transform: scale(1.03);
+  opacity: 0.65;
+}
+
+/* Reduce size on small screens */
+@media (max-width: 480px) {
+  .back-to-top {
+    right: 14px;
+    bottom: 18px;
+    width: 46px;
+    height: 46px;
+  }
+  .back-to-top::before {
+    inset: -5px;
+    filter: blur(8px);
+  }
+  .back-to-top i {
+    font-size: 15px;
+  }
+}
 /* FolioOne Enhanced - Dark Theme with 3D Effects */
 
 :root {
